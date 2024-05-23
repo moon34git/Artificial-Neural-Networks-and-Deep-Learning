@@ -299,7 +299,7 @@ Droy! it is your voices!
 
 MENENIUS:
 
-### Analysis for selecting temperature value
+# Analysis for selecting temperature value
 
 The temperature value of the text generation process controls the randomness of the predictions.
 If the temperature is low, we try to select the next character with the highest probability. On the other hand, if the temperature is high, there is a high possibility of selecting the next character with a low probability. This means that generally, the cooler the temperature, the more consistent and logical the text will remain.
