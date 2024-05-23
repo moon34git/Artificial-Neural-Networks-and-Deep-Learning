@@ -1,3 +1,6 @@
+### Loss Graph
+![losses](losses.png)
+
 
 T = 0.1\
 \
