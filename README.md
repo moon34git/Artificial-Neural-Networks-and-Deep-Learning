@@ -12,3 +12,12 @@ This repository is the solutions to the assignments of the Artificial Neural Net
 - [Q6 - Report](https://github.com/moon34git/Artificial-Neural-Networks-and-Deep-Learning/blob/main/mnist-classification/report/report.ipynb): Employing batch normalization and dropout to improve LeNet-5 model and Verifying that they actually help improve the performance.
 
 :warning: Due to capacity issues, the data folder containing train.tar and test.tar files was not uploaded.
+
+### Assignment (Language-Modeling):
+- [Q1](https://github.com/moon34git/Artificial-Neural-Networks-and-Deep-Learning/blob/main/language-modeling/template/dataset.py): Creating my own pipeline to provide data.
+- [Q2](https://github.com/moon34git/Artificial-Neural-Networks-and-Deep-Learning/blob/main/language-modeling/template/model.py): Implementing Vanilla RNN and LSTM.
+- [Q3](https://github.com/moon34git/Artificial-Neural-Networks-and-Deep-Learning/blob/main/language-modeling/template/main.py): Writing main to train my models.
+- [Q4 - Report](https://github.com/moon34git/Artificial-Neural-Networks-and-Deep-Learning/blob/main/language-modeling/report/README.md): Plotting the results.
+- [Q5](https://github.com/moon34git/Artificial-Neural-Networks-and-Deep-Learning/blob/main/language-modeling/template/generate.py): Generating the next character using trained model.
+- [Q6 - Report](https://github.com/moon34git/Artificial-Neural-Networks-and-Deep-Learning/blob/main/language-modeling/report/README.md): Generate function results and temperature analysis according to different seeds and models.
+
