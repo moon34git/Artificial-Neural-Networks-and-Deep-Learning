@@ -1,81 +1,103 @@
 ### Loss Graph
 ![losses](losses.png)
 
+1. Handling Long-Term Dependencies
+LSTM: LSTMs are designed to capture long-term dependencies in sequences. They use a gating mechanism (input gate, forget gate, and output gate) to control the flow of information and maintain long-term memory. This allows LSTMs to remember important information over long periods and forget irrelevant information, leading to more effective learning, especially for sequences with long-term dependencies.
 
-T = 0.1\
-\
-Vanilla RNN Generated Samples:\
-------------------------------\
-Seed: I\
-\
-Generated:\
- I have see him some and cannot sure, when I say 'This soul to be so lose your lordship and heart,\
-Th\
-------------------------------\
-Seed: love\
-\
-Generated:\
- love to Rome, and the common for than the matter, the sun of York\
-Hath all the people,\
-Have made the\
-------------------------------\
-Seed: should\
-\
-Generated:\
- should be so die the common for the consul, for the common mother, and the common for than the sun o\
-------------------------------\
-Seed: the\
-\
-Generated:\
- the common mother, and the common for than the senate, the senate, what I will not stay have see him\
-------------------------------\
-Seed: happy\
-\
-Generated:\
- happy in the senate, the senate, which the senate, which the senate, who three, the senate, what I w\
-LSTM Generated Samples:\
-------------------------------\
-Seed: I\
-\
-Generated:\
- I will not dine all your ears it is much\
-open a subtle tears in his nature,\
-Deformed, confirm him gl\
-------------------------------\
-Seed: love\
-\
-Generated:\
- love him like a soldier: do not taken war\
-Their very without deserved it.\
-But, worthy lords, make it\
-------------------------------\
-Seed: should\
-\
-Generated:\
- should be my name is Marcius.\
-\
-MENENIUS:\
-Why, so he did, my lord: would it might please you to your \
-------------------------------\
-Seed: the\
-\
-Generated:\
- the world\
-Than camels in the same in him.\
-Thou art a widow,--\
-\
-SICINIUS:\
-We know your hands,\
-Thou kn\
-------------------------------\
-Seed: happy\
-\
-Generated:\
- happy day set to see his death;\
-Which now the loving haste of these our friends.\
-But, leaving this, \
-\
-\
+RNN: Vanilla RNNs struggle with long-term dependencies due to the vanishing gradient problem. When training with backpropagation through time (BPTT), gradients can diminish exponentially, making it difficult for RNNs to learn dependencies that span many time steps.
+
+2. Gradient Flow
+LSTM: The architecture of LSTMs includes mechanisms to preserve gradients over long sequences. The cell state and gated architecture help in maintaining a more stable gradient flow during training, which mitigates the vanishing gradient problem.
+
+RNN: In contrast, RNNs without any gating mechanisms are more prone to the vanishing gradient problem, leading to ineffective learning over long sequences. This results in higher training and validation losses as the model fails to learn long-term dependencies effectively.
+
+3. Flexibility and Complexity
+LSTM: LSTMs have more parameters and a more complex architecture compared to vanilla RNNs. This complexity allows LSTMs to model more nuanced relationships in the data. The added flexibility comes from the additional gates and cell state, which enhance the model's capacity to learn from complex sequential data.
+
+RNN: Vanilla RNNs have a simpler architecture with fewer parameters. While this simplicity can be advantageous in terms of computational efficiency, it limits the model's ability to capture complex patterns in the data, especially when dealing with long sequences.
+
+
+### different samples generated from different seed characters with different T
+Vanilla RNN Generated Samples:
+------------------------------
+Seed: I
+
+Generated:
+ I see her beauty in the supple the corn of my son, my lord, like and so do I mean to see him soul, t
+------------------------------
+Seed: love
+
+Generated:
+ love to Rome, and the common men the senate, who three, the senate, what I will not stay have see hi
+------------------------------
+Seed: should
+
+Generated:
+ should be so die the consul, and the common for me to my lord, your country's prove a proud as the s
+------------------------------
+Seed: the
+
+Generated:
+ the common for than the senate, which the senate, what I will not sleeping, and the common men the s
+------------------------------
+Seed: happy
+
+Generated:
+ happy in the suppliant me to the people,
+Because the consul, when he shall be so much many my son, m
+LSTM Generated Samples:
+------------------------------
+Seed: I
+
+Generated:
+ I have done't?
+
+CORIOLANUS:
+What must I say?
+'I Pray, sir'--Plague upon't! I cannot bring
+My tongue 
+------------------------------
+Seed: love
+
+Generated:
+ love him: lend you you say, my lord, your son, the melancholy face to stake on you this?
+
+VOLUMNIA:
+
+------------------------------
+Seed: should
+
+Generated:
+ should be my name is Marcius.
+
+MENENIUS:
+What is become of Marcius 'O if he
+Had borne the bastards d
+------------------------------
+Seed: the
+
+Generated:
+ the city and
+Be every man himself?
+
+SICINIUS:
+Peace!
+
+MENENIUS:
+What is about to be? I am out of bre
+------------------------------
+Seed: happy
+
+Generated:
+ happy day set to stay him, overboard,
+Into the gods!
+
+CORIOLANUS:
+Ay, but not mine own desire.
+
+Thir
+
+
 T = 0.5\
 \
 Vanilla RNN Generated Samples:\
